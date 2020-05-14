@@ -1,4 +1,45 @@
+<#
+.SYNOPSIS 
 
+Compare executions and outputs of multiple SQL queries
+
+.DESCRIPTION
+
+Given a set of SQL queries and a target on which to execute them on, the function
+executes all the scripts and compares their execution times and outcomes. 
+
+.PARAMETER SqlInstance
+SqlInstance on which to execute the queries
+
+.PARAMETER Database
+Database name on which to execute the queries
+
+.PARAMETER Path
+Path where the scripts are located
+
+.PARAMETER File
+File, or files with queries to be compared
+
+.PARAMETER Accept
+List of issues identified, which have been investigated and accepted
+
+.PARAMETER Investigate
+List of issues which need to be investigated further
+
+.PARAMETER StopOnFirst
+Stop after first not accepted issue
+
+.PARAMETER IdColumn
+Column representing the identity of a row of data
+
+.PARAMETER Parameters 
+Parameters to pass to the query
+
+.INPUTS 
+
+None, the function doesn't accept any piped in parameters
+
+#>
 function Compare-SqlQuery
 {
     [CmdletBinding()]
